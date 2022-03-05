@@ -9,12 +9,24 @@
 </head>
 <body>
 
+  <!-- <select id="season" name="season">
+       <option value=""> Season 1 </option>
+       <option value=""> Season 2 </option>    
+       </select> -->
+
+  <h1 id="currentSeason"> Current Season: </h1>
+
   <div class="container" style="text-align: center">
     <b> <pre id="output"> Press Generate to generate a puzzle! </pre> </b>
     <input name="Difficultylevel" type="number" value="1" min="1" max="60" id="difficultyLevel"/>
     <input name="Generate" type="button" value="Generate" id="generateButton"/>  
     <input name="Upload" type="button" value="Upload" id="upload"/>
+    <input name="Show All Puzzles" type="button" value="Show" id="show"/>    
   </div>
-    
+
+  <h2 id="totalPuzzles"> Total: </h2>
+  <div id="allPuzzles" style="text-align: center; display: inline-flex; flex-wrap: wrap; justify-content: space-around; gap:12px;">
+  </div>
+
 </body>
 </html>
