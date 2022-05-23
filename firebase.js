@@ -1,23 +1,21 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
-import { getDatabase, ref, set, get, push, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, get, push, query, orderByChild } from "firebase/database";
 import { firebaseConfig } from "./credential.js";
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getDatabase();
 
-function uploadPuzzle(puzzle, season, difficultyLevel) {
+async function uploadPuzzle(puzzle, season, difficultyLevel) {
   let puzzlesRef = ref(db, "Puzzles/" + season);
-  push(puzzlesRef).then(newRef => {
-    push(puzzlesRef, {
+
+  let newRef = await push(puzzlesRef);
+  let res = await push(puzzlesRef, {
       id: newRef.key,
       puzzle: puzzleToString(puzzle),
       points: difficultyLevel * 100,
-    }).then((res) => {
-      console.log(res);
-    });
   });
+
+  console.log("Puzzles uploaded: " + newRef.key);
 }
 
 async function getPuzzles(season){
@@ -45,5 +43,5 @@ function puzzleToString(puzzle){
 }
 
 
-export { uploadPuzzle, getPuzzles };
+export { uploadPuzzle, getPuzzles, puzzleToString };
 
