@@ -178,6 +178,7 @@ function printPuzzle(puzzle){
   output.innerHTML = "";
   output.innerHTML += stringOutput;
   output.innerHTML += "========================================\n" ;
+  return stringOutput;
 }  
 
 

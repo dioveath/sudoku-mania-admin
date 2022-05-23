@@ -8,7 +8,9 @@ let showButton = document.getElementById("show");
 let puzzle = null;
 
 let d = new Date();
-let season = `${d.getFullYear()}-${d.toLocaleString('default', { month: 'long'})}-${Math.floor(d.getDay()/4)}`;
+let season = `${d.getFullYear()}-${d.toLocaleString('default', { month: 'long'})}-${Math.floor(d.getDate()/4)}`;
+
+currentSeason.innerHTML = "Current Season: " + season;
 
 generateButton.addEventListener("click", (e) => {
   e.preventDefault();
