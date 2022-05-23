@@ -34,7 +34,7 @@ setInterval(async () => {
   prevSeason = season;
   const limit = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
   updateSeason(season, limit);
-  console.log(`Sudoku Mania Server Running! \nSudoku Mania Season: ${season}`);  
+  console.log(`Sudoku Mania Server Running! \nSudoku Mania Season: ${season}`);
 
 }, 1000);
 
