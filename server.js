@@ -42,7 +42,7 @@ setInterval(async () => {
 // 4 days = 345600000 milliseconds
 
 app.get('/', (_, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {

@@ -5,3 +5,4 @@ credential.js
 *.pem
 *.log
 *.*~
+*~
