@@ -1,2 +1,8 @@
 /node_modules
+certs/
 credential.js
+*.key
+*.pem
+*.log
+*.*~
+*~

@@ -1,6 +1,11 @@
 # SudokuMania Admin Web App
 To help generating and uploading puzzle for SudokuMania Game.
 
+## version 0.2.0
+- NodeJs as Backend server. 
+- Deployable through Docker
+- Automatically creates and updates the new season.
+
 # Instructions
 - Requires credential.js, Use your project's config file
 
